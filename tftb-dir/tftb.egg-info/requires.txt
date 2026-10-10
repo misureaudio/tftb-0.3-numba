@@ -1,0 +1,12 @@
+numpy>=2.1
+scipy>=1.11
+matplotlib>=3.6
+
+[accel]
+numba>=0.61
+cupy-cuda12x>=13
+
+[test]
+pytest>=8
+h5py>=3.10
+scikit-image>=0.22
