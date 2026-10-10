@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tftb"
+version = "0.3.0.dev0"
+description = "Time-Frequency Toolbox: complete Python port of the original MATLAB TFTB (Flandrin et al.), numpy 2.x, golden-validated against tftb-0.3"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "GPL-2.0-or-later" }
+authors = [
+    { name = "F. Auger, P. Flandrin, P. Goncalves, O. Lemoine (original MATLAB TFTB)" },
+]
+dependencies = [
+    "numpy>=2.1",
+    "scipy>=1.11",
+    "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+accel = ["numba>=0.61", "cupy-cuda12x>=13"]
+test = ["pytest>=8", "h5py>=3.10", "scikit-image>=0.22"]
+
+[tool.setuptools]
+packages = ["tftb", "tftb.generators", "tftb.processing", "tftb._accel"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
