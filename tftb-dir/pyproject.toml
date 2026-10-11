@@ -23,7 +23,16 @@ accel = ["numba>=0.61", "cupy-cuda12x>=13"]
 test = ["pytest>=8", "h5py>=3.10", "scikit-image>=0.22"]
 
 [tool.setuptools]
-packages = ["tftb", "tftb.generators", "tftb.processing", "tftb._accel"]
+packages = [
+    "tftb",
+    "tftb.generators",
+    "tftb.generators.tests",
+    "tftb.processing",
+    "tftb.processing.tests",
+    "tftb._accel",
+    "tftb.tests",
+    "tftb.tests.benchmarks",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
